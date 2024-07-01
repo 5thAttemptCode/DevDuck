@@ -1,8 +1,11 @@
-export default function page() {
+import { logout } from "./logout/actions"
+
+
+export default function Home() {
   
   return (
-    <div>
-      
-    </div>
+    <form action={logout}>
+      <button type="submit">Logout</button>
+    </form>
   )
 }
