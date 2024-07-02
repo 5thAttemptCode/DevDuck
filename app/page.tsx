@@ -1,11 +1,9 @@
-import { logout } from "./logout/actions"
+import UserLoggedIn from "./components/userLoggedIn"
 
 
 export default function Home() {
   
   return (
-    <form action={logout}>
-      <button type="submit">Logout</button>
-    </form>
+    <UserLoggedIn />
   )
 }
