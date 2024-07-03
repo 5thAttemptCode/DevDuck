@@ -1,0 +1,29 @@
+.h1{
+    font-size: 54px;
+    font-weight: 700;
+    max-width: 700px;
+    text-align: center;
+    line-height: 1.1;
+
+    .span{
+        background: linear-gradient(to right, #4400ff, #9683ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.p{
+    max-width: 550px;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 1.5rem;
+}
+
+.cta{
+    padding: 0.75rem 2rem;
+    border-radius: 20px;
+    background: #4400ff;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 150px;
+}
