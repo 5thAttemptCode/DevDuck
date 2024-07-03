@@ -1,0 +1,7 @@
+.canvas{
+    aspect-ratio: 1 / 0.5;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+}
