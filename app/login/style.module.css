@@ -1,0 +1,22 @@
+.section{
+    height: calc(100vh - 10vh);
+    max-width: 300px;
+    margin-inline: auto;
+    padding-top: 0;
+}
+
+.form{
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem 1rem;
+    background: black;
+
+    .span{
+        display: grid;
+    }
+
+    &:nth-child(2){
+        border-top: 1px solid grey;
+    }
+}
