@@ -4,6 +4,8 @@ import { createClient } from "@/utils/supabase/client"
 import { useEffect, useState } from "react"
 import { User } from '@supabase/supabase-js'
 import { logout } from "@/app/logout/actions"
+import {SignIn, SignOut, UserSquare } from "@phosphor-icons/react"
+import styles from "./style.module.css"
 
 
 const supabase = createClient()
@@ -40,7 +42,7 @@ export default function UserLoggedIn() {
   }, [])
 
   if (!user) {
-    return null
+    return <a className={styles.login} href="/login">Try Duck-Life</a>
   }
 
   const handleLogout = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -50,8 +52,11 @@ export default function UserLoggedIn() {
   }
 
   return (
-    <form onSubmit={handleLogout}>
-      <button type="submit">Logout</button>
-    </form>
+    <ul className={styles.ul}>
+      <a className={styles.icon} href="/private"><UserSquare size={32} /></a>
+      <form onSubmit={handleLogout}>
+        <button className={styles.icon} type="submit"><SignOut size={30} /></button>
+      </form>
+    </ul>
   )
 }

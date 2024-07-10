@@ -1,7 +1,12 @@
 
 :root{
-    --gridColor: rgb(13, 13, 13);
+    --gridColor: #060c1e;
     --backgroundSize: 5rem;
+}
+
+::selection{
+    color: black;
+    background: #4400ff;
 }
 
 *{
@@ -14,7 +19,7 @@
 body{
     min-height: 100vh;
     padding-top: 10vh;
-    background: rgb(0, 0, 0);
+    background: #030712;
     background-image: 
         linear-gradient(var(--gridColor) 2px, transparent 2px),
         linear-gradient(90deg, var(--gridColor) 2px, transparent 2px);
@@ -42,12 +47,35 @@ nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    z-index: 1000;
+}
+
+footer{
+    height: 30vh;
+    width: 100%;
+    border-top: 1px solid grey;
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
+    max-width: 1024px;
+    width: 100%;
+    margin-inline: auto;
 }
 
 a{
     text-decoration: none;
     color: white;
+}
+
+button{
+    border: none;
+    outline: none;
+
+    &:focus{
+        border: none;
+        outline: none;
+    }
 }
 
 main{
@@ -63,4 +91,15 @@ section{
     justify-content: center;
     align-items: center;
     padding-top: 100px;
+}
+
+label{
+    font-size: 14px;
+}
+
+input{
+    background: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
 }
