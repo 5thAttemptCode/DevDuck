@@ -1,0 +1,25 @@
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdown button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    width: 100px;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    display: none;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 0.375rem;
+  }
+  
