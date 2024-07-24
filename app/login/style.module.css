@@ -1,18 +1,18 @@
 .section{
     height: calc(100vh - 10vh);
-    max-width: 330px;
     width: 100%;
+    max-width: 330px;
     margin-inline: auto;
     padding-top: 0;
 }
 
 .form{
+    width: 100%;
     display: grid;
     gap: 1rem;
-    width: 100%;
     padding: 2rem;
-    background: #1e1e1e;
-    border-radius: 5px;
+    background: var(--form-bg-prim);
+    border-radius: var(--border-rad-prim);
 
     .span{
         display: grid;
@@ -20,15 +20,15 @@
     }
 
     &:nth-child(2){
-        border-top: 1px solid grey;
+        border-top: 1px solid var(--border-clr-prim);
     }
 }
 
 .github{
-    background: #2a2a2a;
+    background: var(--form-bg-sec);
+    border-radius: var(--border-rad-prim);
     padding-block: 0.5rem;
     cursor: pointer;
-    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;

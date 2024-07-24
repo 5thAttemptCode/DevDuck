@@ -1,8 +1,8 @@
 .canvas{
-    aspect-ratio: 1 / 0.5;
     width: 100%;
-    border: 2px solid white;
-    border-radius: 20px;
+    aspect-ratio: 1 / 0.5;
+    background: var(--bg-clr-sec);
+    border: 2px solid var(--border-clr-sec);
+    border-radius: var(--border-rad-sec);
     overflow: hidden;
-    background: black;
 }

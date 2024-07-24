@@ -1,12 +1,12 @@
 .h1{
-    font-size: 54px;
+    font-size: var(--font-size-xl);
     font-weight: 700;
-    max-width: 700px;
-    text-align: center;
     line-height: 1.1;
+    text-align: center;
+    max-width: 700px;
 
     .span{
-        background: linear-gradient(to right, #4400ff, #9683ff);
+        background: linear-gradient(to right, var(--h1-clr-prim), var(--h1-clr-sec));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -14,17 +14,17 @@
 
 .p{
     max-width: 550px;
-    text-align: center;
-    line-height: 1.4;
     margin-top: 1.5rem;
-    color: rgb(180, 179, 179);
+    color: var(--font-cl-sec);
+    line-height: 1.4;
+    text-align: center;
 }
 
 .cta{
-    padding: 0.77rem 3rem;
-    border-radius: 20px;
-    background: #4400ff;
+    border-radius: var(--border-rad-sec);
+    background: var(--btn-bg-prim);
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 150px;
+    padding: 0.77rem 3rem;
 }

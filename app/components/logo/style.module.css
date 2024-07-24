@@ -1,4 +1,4 @@
 .logo{
-    font-size: 23px;
+    font-size: var(--font-size-med);
     font-weight: 600;
 }
