@@ -1,10 +1,11 @@
 "use client"
 
 import * as THREE from 'three'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { GUI } from 'dat.gui'
+
 
 type GLTFAction = THREE.AnimationAction
 
@@ -20,15 +21,21 @@ type GLTFResult = GLTF & {
   animations: GLTFAction[]
 }
 
+
 export function Duck(props: JSX.IntrinsicElements['group']) {
+
   const { nodes } = useGLTF('/duck.gltf') as GLTFResult
 
-  const [bodyColor, setBodyColor] = useState("#0000ff")
-  const [beekColor, setBeekColor] = useState("#ffa500")
-  const [eyeColor, setEyeColor] = useState("#141414")
+  const [ bodyColor, setBodyColor ] = useState("#0000ff")
+  const [ beekColor, setBeekColor ] = useState("#ffa500")
+  const [ eyeColor, setEyeColor ] = useState("#141414")
+  
+  const guiRef = useRef<GUI | null>(null)
 
   useEffect(() => {
     const gui = new GUI()
+    guiRef.current = gui
+
     const bodyFolder = gui.addFolder('Body')
     bodyFolder.addColor({ color: bodyColor }, 'color').onChange(setBodyColor)
     bodyFolder.open()
@@ -43,8 +50,9 @@ export function Duck(props: JSX.IntrinsicElements['group']) {
 
     return () => {
       gui.destroy()
+      guiRef.current = null
     }
-  }, [bodyColor, beekColor, eyeColor])
+  }, [])
 
   return (
     <group {...props} dispose={null}>
