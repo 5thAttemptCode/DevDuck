@@ -33,8 +33,17 @@ export function Duck(props: JSX.IntrinsicElements['group']) {
   const guiRef = useRef<GUI | null>(null)
 
   useEffect(() => {
-    const gui = new GUI()
+    const gui = new GUI({ autoPlace: false })
+    gui.close()
     guiRef.current = gui
+
+    const targetElement = document.getElementById("canvas")
+    if (targetElement) {
+      const customContainer = document.createElement("div")
+      customContainer.classList.add("gui")
+      targetElement.appendChild(customContainer)
+      customContainer.appendChild(gui.domElement)
+    }
 
     const bodyFolder = gui.addFolder('Body')
     bodyFolder.addColor({ color: bodyColor }, 'color').onChange(setBodyColor)
