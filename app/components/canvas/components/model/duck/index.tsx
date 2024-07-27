@@ -26,11 +26,20 @@ export function Duck(props: JSX.IntrinsicElements['group']) {
 
   const { nodes } = useGLTF('/duck.gltf') as GLTFResult
 
-  const [ bodyColor, setBodyColor ] = useState("#0000ff")
-  const [ beekColor, setBeekColor ] = useState("#ffa500")
-  const [ eyeColor, setEyeColor ] = useState("#141414")
+  const loadColor = (key: string, defaultColor: string) => {
+    return localStorage.getItem(key) || defaultColor
+  }
+
+  const [ bodyColor, setBodyColor ] = useState(loadColor("bodyColor", "#0000ff"))
+  const [ beekColor, setBeekColor ] = useState(loadColor("beekColor", "#ffa500"))
+  const [ eyeColor, setEyeColor ] = useState(loadColor("eyeColor", "#141414"))
   
   const guiRef = useRef<GUI | null>(null)
+
+  const handleColorChange = (key: string, setColor: React.Dispatch<React.SetStateAction<string>>) => (color: string) => {
+    localStorage.setItem(key, color)
+    setColor(color)
+  }
 
   useEffect(() => {
     const gui = new GUI({ autoPlace: false })
@@ -46,15 +55,15 @@ export function Duck(props: JSX.IntrinsicElements['group']) {
     }
 
     const bodyFolder = gui.addFolder('Body')
-    bodyFolder.addColor({ color: bodyColor }, 'color').onChange(setBodyColor)
+    bodyFolder.addColor({ color: bodyColor }, 'color').onChange(handleColorChange("bodyColor", setBodyColor))
     bodyFolder.open()
 
     const beekFolder = gui.addFolder('Beek')
-    beekFolder.addColor({ color: beekColor }, 'color').onChange(setBeekColor)
+    beekFolder.addColor({ color: beekColor }, 'color').onChange(handleColorChange("beekColor", setBeekColor))
     beekFolder.open()
 
     const eyeFolder = gui.addFolder('Eyes')
-    eyeFolder.addColor({ color: eyeColor }, 'color').onChange(setEyeColor)
+    eyeFolder.addColor({ color: eyeColor }, 'color').onChange(handleColorChange("eyeColor", setEyeColor))
     eyeFolder.open()
 
     return () => {
