@@ -13,7 +13,7 @@ interface CanvasComponentProps {
 export default function CanvasComponent({ children }: CanvasComponentProps) {
 
   return (
-    <div className={styles.canvas}>
+    <div id='canvas' className={styles.canvas}>
       <Canvas>
         {children}
       </Canvas>
