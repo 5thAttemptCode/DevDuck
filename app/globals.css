@@ -144,3 +144,20 @@ input{
     border: none;
     border-radius: var(--border-rad-prim);
 }
+
+.gui{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.dg{
+    width: 150px;
+}
+
+.close-button.close-bottom{
+    width: 150px;
+    max-width: 150px;
+    border-radius: var(--border-rad-prim);
+    margin-top: 10px;
+}
