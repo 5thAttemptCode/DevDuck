@@ -42,7 +42,7 @@ export default function CameraRig({ children }: CameraRigProps) {
     if (group.current) {
       easing.dampE(
         group.current.rotation,
-        [pointer.current.y / 30, pointer.current.x / 5, 0],
+        [pointer.current.y / 10, -pointer.current.x / 8, 0],
         0.85,
         delta
       )
