@@ -1,0 +1,18 @@
+.footerContainer{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: 1rem;
+    border-top: 1px solid var(--border-clr-prim);
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: var(--border-clr-prim);
+    }
+}
