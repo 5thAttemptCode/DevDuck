@@ -1,24 +1,33 @@
 "use client"
 
-import { Center, Environment, OrbitControls } from "@react-three/drei"
-import { useThree } from "@react-three/fiber"
+import { Center, ContactShadows, Environment, PresentationControls } from "@react-three/drei"
 import CameraRig from "../cameraRig"
 import { Duck } from "../model/duck"
 
 
 export default function MainScene() {
 
-  const { camera, gl } = useThree()
-
   return (
     <>
       <ambientLight />
-      <OrbitControls enableZoom={false} args={[camera, gl.domElement]} />
+      <directionalLight position-z={3} intensity={3} />
       <Environment preset="sunset" />
+      <ContactShadows 
+        position={[0, -2, 0]} 
+        opacity={0.75} 
+        scale={10} 
+        blur={3} 
+        far={4} 
+      />
       <CameraRig>
-        <Center>
-          <Duck scale={1.4} rotation-x={0.3} />
-        </Center>
+        <PresentationControls polar={[0, 0]}>
+          <Center>
+            <Duck 
+              scale={1.4} 
+              rotation-x={0.25} 
+            />
+          </Center>
+        </PresentationControls>
       </CameraRig>
     </>
   )
