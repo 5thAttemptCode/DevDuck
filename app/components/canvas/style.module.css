@@ -6,4 +6,8 @@
     border: 2px solid var(--border-clr-sec);
     border-radius: var(--border-rad-sec);
     overflow: hidden;
+
+    @media(max-width: 450px){
+        aspect-ratio: 1/ 1;
+    }
 }
