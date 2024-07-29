@@ -14,7 +14,7 @@ export default function CanvasComponent({ children }: CanvasComponentProps) {
 
   return (
     <div id='canvas' className={styles.canvas}>
-      <Canvas>
+      <Canvas shadows>
         {children}
       </Canvas>
     </div>
