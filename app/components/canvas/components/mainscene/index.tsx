@@ -1,22 +1,21 @@
 "use client"
 
-import { Center, ContactShadows, Environment, PresentationControls } from "@react-three/drei"
+import { Center, ContactShadows, PresentationControls } from "@react-three/drei"
 import CameraRig from "../cameraRig"
 import { Duck } from "../model/duck"
+import Lights from "../lights"
 
 
 export default function MainScene() {
 
   return (
     <>
-      <ambientLight />
-      <directionalLight position-z={3} intensity={3} />
-      <Environment preset="sunset" />
+      <Lights />
       <ContactShadows 
         position={[0, -2, 0]} 
         opacity={0.75} 
         scale={10} 
-        blur={3} 
+        blur={2} 
         far={4} 
       />
       <CameraRig>
@@ -24,7 +23,6 @@ export default function MainScene() {
           <Center>
             <Duck 
               scale={1.4} 
-              rotation-x={0.25} 
             />
           </Center>
         </PresentationControls>
