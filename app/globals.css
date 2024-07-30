@@ -39,9 +39,9 @@
 
     /*background variables*/
     --bg-clr-prim: #030712;
-    --bg-clr-sec: #545454;
+    --bg-clr-sec: #23263a;
     --grad-clr-one: rgba(83, 71, 255, 0.5);
-    --grad-clr-two: rgba(87, 205, 255, 0);
+    --grad-clr-two: #57cdff00;
     --grid-clr: #060c1e;
     --bg-size: 5rem;
 }
