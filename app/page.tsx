@@ -1,9 +1,14 @@
+"use client"
+
 import CanvasComponent from "./components/canvas"
+import { useUser } from "./components/customHooks/user"
 import Headline from "./components/headline"
 import styles from './style.module.css'
 
 
 export default function Home() {
+
+  const user = useUser()
   
   return (
     <main>
@@ -13,7 +18,7 @@ export default function Home() {
           With Duck Life you can create your personal rubber duck, 
           for a better developing experience.
         </p>
-        <a className={styles.cta} href="/login">START NOW</a>
+        <a className={styles.cta} href={!user ? "/login" : "/private"}>START NOW</a>
       </section>
       <CanvasComponent>
         <ambientLight />
