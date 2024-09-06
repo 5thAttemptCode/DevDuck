@@ -6,7 +6,7 @@ export default function Lights() {
   return (
     <>
       <ambientLight />
-      <directionalLight position-z={3} intensity={1} />
+      <directionalLight position-z={3} intensity={4} />
       <Environment resolution={256}>
         <group >
           <Lightformer form="circle" intensity={4} rotation-x={Math.PI / 2} position={[0, 5, 9]} scale={2} />
