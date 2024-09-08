@@ -7,13 +7,13 @@ import { ReactNode } from 'react'
 
 interface CanvasComponentProps {
   children: ReactNode
+  backgroundColor: string
 }
 
 
-export default function CanvasComponent({ children }: CanvasComponentProps) {
-
+export default function CanvasComponent({ children, backgroundColor }: CanvasComponentProps) {
   return (
-    <div id='canvas' className={styles.canvas}>
+    <div id='canvas' style={{ backgroundColor }} className={styles.canvas}>
       <Canvas shadows camera={{position:[0, 1.1, 5]}}>
         {children}
       </Canvas>

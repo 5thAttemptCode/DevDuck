@@ -13,6 +13,7 @@ interface GuiComponentProps {
   }>
 }
 
+
 export function GuiComponent({ colorOptions }: GuiComponentProps) {
 
   const guiRef = useRef<GUI | null>(null)
@@ -28,31 +29,21 @@ export function GuiComponent({ colorOptions }: GuiComponentProps) {
       if (targetElement) {
         const customContainer = document.createElement("div")
         customContainer.classList.add("gui")
-        targetElement.appendChild(customContainer)
-        customContainer.appendChild(gui.domElement)
+        targetElement.appendChild (customContainer)
+        guiRef.current.domElement.parentNode?.removeChild(guiRef.current.domElement)
+        customContainer.appendChild(guiRef.current.domElement)
       }
 
-      colorOptions.forEach(({ folderName, colorKey, defaultColor, setColor }) => {
-        const folder = gui.addFolder(folderName)
-        const initialColor = localStorage.getItem(colorKey) || defaultColor
-        const colorController = folder.addColor({ color: initialColor }, 'color')
-
-        // Update color without triggering unnecessary re-renders
-        colorController.onChange((color: string) => {
-          localStorage.setItem(colorKey, color)
-          setColor(color)
+      // Add color options to the GUI
+      colorOptions.forEach((option) => {
+        const folder = gui.addFolder(option.folderName)
+        folder.addColor(option, 'defaultColor').onChange((value) => {
+          option.setColor(value)
+          localStorage.setItem(option.colorKey, value)
         })
-
-        folder.open()
       })
     }
+  }, [colorOptions])
 
-    // Cleanup on unmount
-    return () => {
-      guiRef.current?.destroy()
-      guiRef.current = null
-    }
-  }, []) // Empty dependency array ensures it runs only once
-
-  return null
+  return <></>
 }
