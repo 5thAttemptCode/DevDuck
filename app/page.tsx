@@ -14,7 +14,7 @@ export default function Home() {
     <main>
       <section>
         <h1 className={styles.h1}>The digital <span className={styles.span}>rubber duck</span> for developers</h1>
-        <p className={styles.p}>Every developer has the right to have a super cool rubber duck. 
+        <p className={styles.p} style={{ textAlign: "center"}}>Every developer has the right to have a super cool rubber duck. 
           With Duck Life you can create your personal rubber duck, 
           for a better developing experience.
         </p>
@@ -33,7 +33,7 @@ export default function Home() {
       <section>
         <Headline text="Duck-off plastic!" />
         <p className={styles.p}>
-          Ain't nobody got time for plastic! Yes we could produce sustainable physical rubber ducks by reusing old plastic, but 3D is just as cool.
+          Ain't nobody got time for plastic! Yes we could produce sustainable physical rubber ducks by reusing old plastic and blablabla, but 3D is just as cool.
         </p>
       </section>
     </main>
