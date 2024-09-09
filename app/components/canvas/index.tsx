@@ -7,7 +7,7 @@ import { ReactNode } from 'react'
 
 interface CanvasComponentProps {
   children: ReactNode
-  backgroundColor: string
+  backgroundColor: string | undefined
 }
 
 

@@ -20,7 +20,7 @@ export default function Home() {
         </p>
         <a className={styles.cta} href={!user ? "/login" : "/private"}>START NOW</a>
       </section>
-      <CanvasComponent>
+      <CanvasComponent backgroundColor={undefined}>
         <ambientLight />
       </CanvasComponent>
       <section>
