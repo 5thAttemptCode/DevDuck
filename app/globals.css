@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
     /*general color variables*/
@@ -56,6 +57,7 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--font-clr-prim);
+    font-family: 'Inter', sans-serif;
 }
 
 ::after, ::before{

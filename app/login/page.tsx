@@ -9,8 +9,8 @@ export default function LoginPage() {
     <section className={styles.section}>
       <div className={styles.formContainer}>
         <Github />
-        <p>or sign in with</p>
-        <Email />
+        {/* <p className={styles.p}>or sign in with</p>
+        <Email /> */}
       </div>
     </section>
   )

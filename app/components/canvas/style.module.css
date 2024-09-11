@@ -3,7 +3,7 @@
     width: 100%;
     aspect-ratio: 1 / 0.5;
     background: var(--bg-clr-sec);
-    border: 2px solid var(--border-clr-sec);
+    border: 2px solid black;
     border-radius: var(--border-rad-sec);
     overflow: hidden;
 

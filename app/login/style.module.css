@@ -6,13 +6,17 @@
     padding-top: 0;
 }
 
+.formContainer{
+    background: var(--form-bg-prim);
+    border-radius: var(--border-rad-prim);
+    padding: 1.5rem;
+    width: 300px;
+}
+
 .form{
     width: 100%;
     display: grid;
     gap: 1rem;
-    padding: 2rem;
-    background: var(--form-bg-prim);
-    border-radius: var(--border-rad-prim);
 
     .span{
         display: grid;
@@ -28,6 +32,7 @@
     background: var(--form-bg-sec);
     border-radius: var(--border-rad-prim);
     padding-block: 0.5rem;
+    width: 100%;
     cursor: pointer;
     display: flex;
     justify-content: center;

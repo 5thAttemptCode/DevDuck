@@ -6,7 +6,7 @@ import styles from "../../style.module.css"
 export default function Github() {
 
   return (
-    <form className={styles.form} action={loginWithGitHub} method="post">
+    <form className={styles.form} action={loginWithGitHub} method="POST">
       <span className={styles.span}>
         <label htmlFor="button">Sign in with</label>
         <button className={styles.github} type="submit"> <GithubLogo size={20} /> &nbsp; Login with GitHub</button>
