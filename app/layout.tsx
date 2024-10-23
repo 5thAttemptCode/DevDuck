@@ -8,7 +8,7 @@ import Footer from "./components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Duck Life - We didn't choose duck-life; duck-life chose us!",
+  title: "const quack = querySelector.DevDuck",
   description: "The coolest 3D rubber duck ever!",
 };
 
