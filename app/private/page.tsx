@@ -1,3 +1,4 @@
+
 import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/supabase/server'
 import CanvasComponent from '../components/canvas'
@@ -16,8 +17,11 @@ export default async function PrivatePage() {
 
   return (
     <main className={styles.main}>
-      <CanvasComponent>
+
+      <CanvasComponent backgroundColor={undefined}>
+      
         <MainScene />
+   
       </CanvasComponent>
     </main>
   )
