@@ -1,14 +1,14 @@
 "use client"
 
-// import CanvasComponent from "./components/canvas"
-import { useUser } from "./components/customHooks/user"
+import CanvasComponent from "./components/canvas"
 import Headline from "./components/headline"
+import { useUserContext } from "./context/userContext"
 import styles from './style.module.css'
 
 
 export default function Home() {
 
-  const user = useUser()
+  const { user } = useUserContext() 
   
   return (
     <main>
@@ -20,9 +20,9 @@ export default function Home() {
         </p>
         <a className={styles.cta} href={!user ? "/login" : "/private"}>START NOW</a>
       </section>
-      {/* <CanvasComponent backgroundColor={undefined}>
+      <CanvasComponent backgroundColor={undefined}>
         <ambientLight />
-      </CanvasComponent> */}
+      </CanvasComponent>
       <section>
         <Headline text="Customize your own rubber duck" />
         <p className={styles.p}>
