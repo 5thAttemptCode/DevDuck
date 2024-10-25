@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState, ReactNode } from 'react'
+import React, { useRef, useState, ReactNode } from 'react'
 import styles from './style.module.css'
+import useClickOutside from '../customHooks/useClickOutside'
 
 
 interface DropdownMenuProps {
@@ -10,24 +11,9 @@ interface DropdownMenuProps {
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ buttonContent, children }) => {
 
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const [menuVisible, setMenuVisible] = useState(false)
+  const [ menuVisible, setMenuVisible ] = useState(false)
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-      setMenuVisible(false)
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
-
-//   const handleSelection = () => {
-//     setMenuVisible(false);
-//   };
+  useClickOutside(dropdownRef, () => setMenuVisible(false))
 
   return (
     <div className={styles.dropdown} ref={dropdownRef}>
