@@ -5,21 +5,19 @@ import Logo from '../logo'
 import UserLoggedIn from '../userLoggedIn'
 import styles from './style.module.css'
 import { UserCircle } from '@phosphor-icons/react'
-import { useUser } from '../customHooks/user'
-
+import { useUserContext } from '../../context/userContext'
 
 export default function Nav() {
-
-  const user = useUser()
+  const { user, setUser } = useUserContext() // Use context to get user and setUser
 
   return (
     <nav>
       <Logo />
       {!user ? (
-        <a className={styles.login} href="/login">Try Duck-Life</a>
+        <a className={styles.login} href="/login">Try DevDuck</a>
       ) : (
         <DropdownMenu buttonContent={<UserCircle size={32} />}>
-          <UserLoggedIn />
+          <UserLoggedIn setUser={setUser} /> {/* Pass setUser to UserLoggedIn */}
         </DropdownMenu>
       )}
     </nav>
