@@ -1,0 +1,40 @@
+.section{
+    height: calc(100vh - 10vh);
+    width: 100%;
+    max-width: 330px;
+    margin-inline: auto;
+    padding-top: 0;
+}
+
+.formContainer{
+    background: var(--form-bg-prim);
+    border-radius: var(--border-rad-prim);
+    padding: 1.5rem;
+    width: 300px;
+}
+
+.form{
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+
+    .span{
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    &:nth-child(2){
+        border-top: 1px solid var(--border-clr-prim);
+    }
+}
+
+.github{
+    background: var(--form-bg-sec);
+    border-radius: var(--border-rad-prim);
+    padding-block: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
