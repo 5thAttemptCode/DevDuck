@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
-import { UserProvider } from "./context/userContext";
+// import { UserProvider } from "./context/userContext";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from '@clerk/themes'
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,16 +22,26 @@ export default function RootLayout({
 }>) {
 
   return (
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+        variables: {
+          colorPrimary: "#4400ff",
+          borderRadius: "5px"
+        }
+      }}
+    >
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
-        <UserProvider>
+        {/* <UserProvider> */}
         <header>
           <Nav />
         </header>
         {children}
         <Footer />
-        </UserProvider>
+        {/* </UserProvider> */}
       </body>
     </html>
+    </ClerkProvider>
   );
 }
