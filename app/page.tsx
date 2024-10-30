@@ -18,7 +18,7 @@ export default function Home() {
           for a better developing experience.
         </p>
         <SignedOut>
-          <a className={styles.cta} href="/">START NOW</a>
+          <a className={styles.cta} href="/signUp">START NOW</a>
         </SignedOut>
         <SignedIn>
           <a className={styles.cta} href="/private">Customize your Duck</a>
