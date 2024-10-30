@@ -1,7 +1,14 @@
 .login{
-    font-size: var(--font-size-sml);
-    padding: 0.65rem 1.5rem;
-    border-radius: var(--border-rad-sec);
-    background: var(--btn-bg-sec);
+    padding: 0.52rem 1.5rem;
     backdrop-filter: blur(10px);
+    background: var(--btn-bg-sec);
+    border-radius: var(--border-rad-sec);
+    font-size: var(--font-size-sml);
+}
+
+.ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
