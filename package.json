@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.0.2",
+    "@clerk/themes": "^2.1.39",
     "@phosphor-icons/react": "^2.1.7",
+    "@prisma/client": "^5.21.1",
     "@react-three/drei": "^9.108.1",
     "@react-three/fiber": "^8.16.8",
     "@react-three/xr": "^6.2.11",
@@ -18,6 +20,7 @@
     "@supabase/supabase-js": "^2.44.2",
     "dat.gui": "^0.7.9",
     "next": "^14.2.16",
+    "prisma": "^5.21.1",
     "react": "^18",
     "react-dom": "^18",
     "three": "^0.166.1"
