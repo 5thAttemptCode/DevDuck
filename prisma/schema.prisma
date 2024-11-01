@@ -3,14 +3,29 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
-  id        String   @id @default(uuid())
-  clerkId   String   @unique
-  email     String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id               String            @id @default(uuid())
+  clerkId          String            @unique
+  email            String            @unique
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  ColorPreferences ColorPreferences?
+}
+
+model ColorPreferences {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  bodyColor       String   @default("#0000ff")
+  beekColor       String   @default("#ffa500")
+  eyeColor        String   @default("#141414")
+  backgroundColor String   @default("#ffffff")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [clerkId])
 }
