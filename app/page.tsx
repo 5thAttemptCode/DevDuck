@@ -12,7 +12,7 @@ export default function Home() {
     <main>
       <section>
         <h1 className={styles.h1}>The digital <span className={styles.span}>rubber duck</span> for developers</h1>
-        <p className={styles.p} style={{ textAlign: "center"}}>
+        <p className={styles.p}>
           Every developer has the right to have a super cool rubber duck. 
           With DevDuck you can create your personal rubber duck, 
           for a better developing experience.
@@ -25,7 +25,7 @@ export default function Home() {
         </SignedIn>
       </section>
 
-      <CanvasComponent backgroundColor={undefined}>
+      <CanvasComponent backgroundColor="var(--bg-clr-sec)">
         <ambientLight />
       </CanvasComponent>
 
