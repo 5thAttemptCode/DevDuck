@@ -1,3 +1,15 @@
 .main{
     padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.arButton{
+    margin-inline: auto;
+    padding: 0.52rem 1.5rem;
+    backdrop-filter: blur(10px);
+    background: var(--btn-bg-sec);
+    border-radius: var(--border-rad-sec);
+    font-size: var(--font-size-sml);
 }

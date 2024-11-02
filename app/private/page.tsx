@@ -1,27 +1,22 @@
+"use client"
 
-import { redirect } from 'next/navigation'
-import { createClient } from '@/utils/supabase/server'
 import CanvasComponent from '../components/canvas'
 import styles from "./style.module.css"
 import MainScene from '../components/canvas/components/mainscene'
+import { XR, createXRStore } from '@react-three/xr'
 
 
-export default async function PrivatePage() {
+const store = createXRStore()
+
+
+export default function PrivatePage() {
   
-  const supabase = createClient()
-
-  const { data: { user }, error } = await supabase.auth.getUser()
-  if (error || !user) {
-    redirect('/login')
-  }
-
   return (
     <main className={styles.main}>
-
+      <button className={styles.arButton} onClick={() => store.enterAR()}>Enter AR</button>
       <CanvasComponent backgroundColor={undefined}>
-      
+        <XR store={store}></XR>
         <MainScene />
-   
       </CanvasComponent>
     </main>
   )
