@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
+
     /*general color variables*/
     --font-clr-prim: #ffffff;
     --font-clr-sec: #b4b3b3;
@@ -9,8 +10,21 @@
     --border-clr-sec: #ffffff;
     --accent-clr: #4400ff;
 
-    /*other variables*/
-    --max-width: 1024px;
+    /*button variables*/
+    --btn-bg-prim: #4400ff;
+    --btn-bg-sec: rgb(68, 0, 255, 0.5);
+
+    /*h1 variables*/
+    --h1-clr-prim: #4400ff;
+    --h1-clr-sec: #9683ff;
+
+    /*background variables*/
+    --bg-clr-prim: #030712;
+    --bg-clr-sec: #23263a;
+    --grad-clr-one: rgba(83, 71, 255, 0.5);
+    --grad-clr-two: #57cdff00;
+    --grid-clr: #0d101b;
+    --bg-size: 5rem;
 
     /*fontsize variables*/
     --font-size-xl: 54px;
@@ -21,30 +35,7 @@
     /*other variables*/
     --border-rad-prim: 5px;
     --border-rad-sec: 30px;
-
-    /*button variables*/
-    --btn-bg-prim: #4400ff;
-    --btn-bg-sec: rgb(68, 0, 255, 0.5);
-
-    /*form variables*/
-    --form-bg-prim: #1e1e1e;
-    --form-bg-sec: #2a2a2a;
-
-    /*h1 variables*/
-    --h1-clr-prim: #4400ff;
-    --h1-clr-sec: #9683ff;
-
-    /*dropdown variables*/
-    --drp-dwn-bg: rgb(0, 0, 0, 0.5);
-    --drp-dwn-hov: #2a2a2a;
-
-    /*background variables*/
-    --bg-clr-prim: #030712;
-    --bg-clr-sec: #23263a;
-    --grad-clr-one: rgba(83, 71, 255, 0.5);
-    --grad-clr-two: #57cdff00;
-    --grid-clr: #1c1e25;
-    --bg-size: 5rem;
+    --max-width: 1024px;
 }
 
 
@@ -66,6 +57,28 @@
 ::selection{
   background: var(--accent-clr);
   color: var(--font-clr-cont);
+}
+
+body{
+  min-height: 100vh;
+  padding-top: 10vh;
+  background: var(--bg-clr-prim);
+  background-size: var(--bg-size) var(--bg-size);
+  background-image: 
+    linear-gradient(var(--grid-clr) 2px, transparent 2px),
+    linear-gradient(90deg, var(--grid-clr) 2px, transparent 2px);
+
+  &::after{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: 
+      radial-gradient(75.53% 100.65% at 50% -45.96%, 
+      var(--grad-clr-one) 0, 
+      var(--grad-clr-two) 100%);
+  }
 }
 
 nav{
@@ -93,28 +106,6 @@ nav{
   }
 }
 
-body{
-  min-height: 100vh;
-  padding-top: 10vh;
-  background: var(--bg-clr-prim);
-  background-size: var(--bg-size) var(--bg-size);
-  background-image: 
-    linear-gradient(var(--grid-clr) 2px, transparent 2px),
-    linear-gradient(90deg, var(--grid-clr) 2px, transparent 2px);
-
-  &::after{
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background: 
-      radial-gradient(75.53% 100.65% at 50% -45.96%, 
-      var(--grad-clr-one) 0, 
-      var(--grad-clr-two) 100%);
-  }
-}
-
 footer{
   height: 30vh;
   width: 100%;
@@ -134,11 +125,12 @@ a{
 button, button:focus{
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 main{
-  width: 100%;
   margin-inline: auto;
+  width: 100%;
   max-width: var(--max-width);
 }
 
