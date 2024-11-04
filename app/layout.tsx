@@ -5,6 +5,7 @@ import { dark } from '@clerk/themes'
 import "./globals.css"
 import Nav from "./components/nav"
 import Footer from "./components/footer"
+import { ColorProvider } from "@/context/colorContext"
 
 
 const inter = Inter({ subsets: ["latin"] })
@@ -32,11 +33,13 @@ export default function RootLayout({
     >
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
-        <header>
-          <Nav />
-        </header>
-        {children}
-        <Footer />
+        <ColorProvider>
+          <header>
+            <Nav />
+          </header>
+          {children}
+          <Footer />
+        </ColorProvider>
       </body>
     </html>
     </ClerkProvider>

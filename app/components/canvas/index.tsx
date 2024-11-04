@@ -11,9 +11,10 @@ interface CanvasComponentProps {
 }
 
 
-export default function CanvasComponent({ children, backgroundColor }: CanvasComponentProps) {
+export default function CanvasComponent({ children }: CanvasComponentProps) {
+
   return (
-    <div id='canvas' style={{ backgroundColor }} className={styles.canvas}>
+    <div id='canvas' className={styles.canvas}>
       <Canvas shadows camera={{position:[0, 1.1, 5]}}>
         {children}
       </Canvas>
