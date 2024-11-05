@@ -7,6 +7,7 @@
 
   .span{
     background: linear-gradient(to right, var(--h1-clr-prim), var(--h1-clr-sec));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -18,8 +19,6 @@
   max-width: 550px;
   text-align: justify;
   color: var(--font-clr-sec);
-
-  
 }
 
 section:first-of-type .p:nth-of-type(1) {
